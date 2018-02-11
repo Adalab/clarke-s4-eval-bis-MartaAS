@@ -2,4 +2,54 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+	text-align: center;
+}
+
+a{
+	color: black;
+}
+
+.language--HTML{
+	background-image: url('../images/iconhtml.png');
+	background-size: cover;
+	width: 60px;
+}
+
+.language--JavaScript{
+	background-image: url('../images/iconjs.png');
+	background-size: cover;
+	width: 60px;
+}
+
+.language--CSS{
+	background-image: url('../images/iconcss.png');
+	background-size: cover;
+	width: 60px;
+}
+
+.language--Shell{
+	background-image: url('../images/icontr.png');
+	background-size: cover;
+	width: 60px;
+}
+
+@media all and (min-width: 500px){
+	.containerRepos{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media all and (min-width: 768px){
+	.containerRepos{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media all and (min-width: 900px){
+	.containerRepos{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

@@ -6,10 +6,11 @@ class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.handleClick = this.handleClick.bind(this);
-		this.handleLanguage = this.handleLanguage.bind(this);
+		this.handleLanguage =
+		this.handleLanguage.bind(this);
 		this.state = {
 			arrayRepos: [],
-			language : " "
+			language: " "
 		};
 	}
 
@@ -39,14 +40,13 @@ class App extends React.Component {
 				allRepos = allRepos.filter(element => element.name.toLowerCase().includes(this.state.filterText.toLowerCase())
 				);
 			}
-
 		return(<div className="containerRepos">
 			{
 				allRepos.map(
 					infoRepo =>
 						<Repo nameRepo={infoRepo.name}
 							linkRepo={infoRepo.html_url}
-							descriptionRepo={infoRepo.description}
+							descriptionRepo={infoRepo.description? infoRepo.description : 'not description'}
 							languageRepo={infoRepo.language}/>
 					)
 		}
@@ -62,7 +62,6 @@ class App extends React.Component {
 		this.setState({
 			filterLanguage : theLanguage
 		})
-
 	}
 
   render() {

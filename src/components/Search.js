@@ -4,7 +4,7 @@ export class Search extends React.Component {
 	render(){
 		return(
 			<div>
-			<input className="" type="text" placeholder="Encuentra" onChange={this.props.whenWrite}>
+			<input className="input" type="text" placeholder="Encuentra" onChange={this.props.whenWrite}>
 			</input>
 
 			<select  onChange={this.props.whenSelect}>

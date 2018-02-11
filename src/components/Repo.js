@@ -6,7 +6,7 @@ class Repo extends React.Component {
 			<div className="cardInfoRepo">
 				<h2><a href={this.props.linkRepo} target="_blank">{this.props.nameRepo}</a></h2>
 				<p>{this.props.descriptionRepo}</p>
-				<span>{this.props.languageRepo}</span>
+				<span className={`language language--${this.props.languageRepo}`}>{this.props.languageRepo}</span>
 			</div>
 		)
 	}
