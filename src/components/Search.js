@@ -4,10 +4,10 @@ export class Search extends React.Component {
 	render(){
 		return(
 			<div>
-			<input className="input" type="text" placeholder="Encuentra" onChange={this.props.whenWrite}>
+			<input className="input" type="text" placeholder="Busca el repo" onChange={this.props.whenWrite}>
 			</input>
 
-			<select  onChange={this.props.whenSelect}>
+			<select className="select" onChange={this.props.whenSelect}>
 				<option value="">Select</option>
 				<option value="HTML">HTML</option>
 				<option value="CSS">CSS</option>

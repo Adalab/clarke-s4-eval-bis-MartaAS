@@ -3,40 +3,87 @@ body {
   padding: 0;
   font-family: sans-serif;
 	text-align: center;
+	background-color: #FCFFF5;
+}
+.header{
+	padding: 0;
+	margin: 0;
+	height: 150px;
+	background-color: #3E606F;
+	color: #D1DBBD;
+}
+.title{
+	margin: 0;
+	padding: 0;
+	padding-top: 50px;
 }
 
 a{
-	color: black;
+	color: #193441;
+}
+a:hover {
+    color: #FCFFF5;
 }
 
+.input{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	width: 250px;
+	height: 30px;
+	border-radius: 15px;
+	margin-right: 20px;
+}
+
+.select{
+	height: 30px;
+	border-radius: 15px;
+	border-color: black;
+}
+
+.cardInfoRepo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+	border-radius: 60px;
+	background-color: #91AA9D;
+	height: 280px;
+}
+
+.language{
+	width: 60px;
+	height: 60px;
+	margin-bottom: 30px;
+	align-self: center;
+	margin-top: 12px;
+}
 .language--HTML{
 	background-image: url('../images/iconhtml.png');
 	background-size: cover;
-	width: 60px;
 }
 
 .language--JavaScript{
 	background-image: url('../images/iconjs.png');
 	background-size: cover;
-	width: 60px;
 }
 
 .language--CSS{
 	background-image: url('../images/iconcss.png');
 	background-size: cover;
-	width: 60px;
 }
 
 .language--Shell{
 	background-image: url('../images/icontr.png');
 	background-size: cover;
-	width: 60px;
 }
 
 @media all and (min-width: 500px){
 	.containerRepos{
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+	.title{
+		font-size: 35px;
 	}
 }
 
@@ -45,11 +92,25 @@ a{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.title{
+		font-size: 55px;
+	}
+
+	.input{
+		width: 500px;
+	}
+	.select{
+		width: 150px;
+	}
 }
 
-@media all and (min-width: 900px){
+@media all and (min-width: 1000px){
 	.containerRepos{
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
+	}
+	.title{
+		font-size: 75px;
+		padding-top: 30px;
 	}
 }
