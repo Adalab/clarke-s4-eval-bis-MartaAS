@@ -1,7 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 	text-align: center;
 	background-color: #FCFFF5;
 }
@@ -22,7 +22,7 @@ a{
 	color: #193441;
 }
 a:hover {
-    color: #FCFFF5;
+	color: #FCFFF5;
 }
 
 .counter{
@@ -65,10 +65,10 @@ a:hover {
 	align-self: center;
 	margin-top: 12px;
 	-webkit-transition:all 0.5s ease-out;
- -moz-transition:all 0.5s ease-out;
- -ms-transition:all 0.5s ease-out;
- -o-transition:all 0.5s ease-out;
- transition:all 0.5s ease-out;
+	-moz-transition:all 0.5s ease-out;
+	-ms-transition:all 0.5s ease-out;
+	-o-transition:all 0.5s ease-out;
+	transition:all 0.5s ease-out;
 }
 .language:hover{
 	-webkit-transform:rotate(360deg) scale(1.3);
