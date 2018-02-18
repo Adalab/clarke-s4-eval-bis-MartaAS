@@ -10,7 +10,8 @@ class App extends React.Component {
 		this.handleLanguage.bind(this);
 		this.state = {
 			arrayRepos: [],
-			language: " "
+			language: " ",
+			counter: 0
 		};
 	}
 
@@ -19,7 +20,8 @@ class App extends React.Component {
 		.then(response => response.json())
 		.then(json =>{
 			this.setState({
-				arrayRepos: json
+				arrayRepos: json,
+				counter: json.length
 			});
 		})
 	}
@@ -40,6 +42,8 @@ class App extends React.Component {
 				allRepos = allRepos.filter(element => element.name.toLowerCase().includes(this.state.filterText.toLowerCase())
 				);
 			}
+
+
 		return(<div className="containerRepos">
 			{
 				allRepos.map(
@@ -54,14 +58,55 @@ class App extends React.Component {
 	}
 
 	handleClick(event){
-		this.setState({filterText : event.target.value})
+		let valueText = event.target.value;//recogemos el valor introducido del input
+		let array = this.state.arrayRepos;
+		let arrayFiltered = array.filter(element => element.name.toLowerCase().includes(valueText.toLowerCase())
+	);
+
+		if (this.state.filterLanguage){
+			let languageSelected = this.state.filterLanguage;
+			let arraySuperFiltered = arrayFiltered.filter(element => element.language.toLowerCase().includes(languageSelected.toLowerCase())
+			);
+
+					this.setState({
+						filterText : valueText,
+						counter: arraySuperFiltered.length
+					})
+		}
+		else {
+					this.setState({
+						filterText : valueText,
+						counter: arrayFiltered.length
+					})
+		}
+
 	}
 
 	handleLanguage(event){
 		let theLanguage = event.currentTarget.value;
+		let array1 = this.state.arrayRepos;
+		let arrayFiltered1 = array1.filter(element => element.language.toLowerCase().includes(theLanguage.toLowerCase())
+	);
+
+	if(this.state.filterText){
+		let textSelected = this.state.filterText;
+		let arraySuperFiltered1 = arrayFiltered1.filter(element => element.name.toLowerCase().includes(textSelected.toLowerCase())
+		);
+
 		this.setState({
-			filterLanguage : theLanguage
+			filterLanguage : theLanguage,
+			counter: arraySuperFiltered1.length
 		})
+
+	}
+
+	else{
+		this.setState({
+			filterLanguage : theLanguage,
+			counter: arrayFiltered1.length
+		})
+	}
+
 	}
 
   render() {
@@ -71,6 +116,7 @@ class App extends React.Component {
 					<h1 className="title">Repos at Adalab in GitHub</h1>
 				</header>
 				<section className="container">
+					<div>{this.state.counter}</div>
 					<Search whenWrite={this.handleClick} whenSelect={this.handleLanguage} />
 					{this.drawRepos()}
 				</section>
